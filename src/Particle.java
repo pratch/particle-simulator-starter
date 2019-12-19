@@ -10,40 +10,36 @@ public class Particle {
 	
 	private int x;
 	private int y;
-	private int dx;
-	private int dy;
+	private int vx;
+	private int vy;
 	private int size;
 	private int life;
 	private Color color;	
 	private String name;
 	
-	public Particle(String name, int x, int y, Color color, boolean isUpward)
+	public Particle(String name, int x, int y, Color color)
 	{
 		// TODO: your constructor code goes here
+		// assign starting position (x,y) and color of the particle
 		
 		
 		
-		// randomize size, life, and velocity of the particle
-		size = (int) (avgSize + (1 - 2*Math.random()) * avgSize / 2);
-		life = (int) (avgLife + (1 - 2*Math.random()) * avgLife / 2);
 		
-		int magnitude = (int) (avgSpeed + (1 - 2*Math.random()) * avgSpeed / 2);
-		double angle;
-		if(isUpward)
-			angle = (2 - Math.random()) * Math.PI;
-		else 
-			angle = Math.PI * Math.random();	
-		dx = (int) (magnitude * Math.cos(angle));
-		dy = (int) (magnitude * Math.sin(angle));
+		// TODO: use Math.random() to initialize random values for size, life, and velocity of the particle
+		// the average size, life, and velocity over all particles must be avgSize, avgLife, and avgSpeed, respectively
+
+		
+		
+		
 	}
 	
 	// Update particle's position and life
 	// Return true if the particle is dead (life == 0)
 	public boolean update()
 	{ 
-		// increment particle's position by delta 
-		x += dx;
-		y += dy;
+		// increment particle's position by velocity 
+		x += vx;
+		y += vy;
 		
 		// TODO:
 		// check for collision and bounce off the wall
