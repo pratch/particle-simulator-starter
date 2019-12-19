@@ -23,7 +23,7 @@ public class Window extends JFrame{
 	private static final int numParticles = 12;		// total number of particles
 
 	public static void main(String[] args) {
-		Window window = new Window(1024, 768, "Particle Simulator 2018");
+		Window window = new Window(1024, 768, "Particle Simulator 2019");
 		window.pollInput();
 		window.loop();
 	}
@@ -74,15 +74,15 @@ public class Window extends JFrame{
 		nWidth /= 2;
 
 		setBounds(nWidth-(width/2), nHeight-(height/2), width, height);
-	    render.setBounds(nWidth-(width/2), nHeight-(height/2), width, height);
+		render.setBounds(nWidth-(width/2), nHeight-(height/2), width, height);
 
-	    add(render);
-	    pack();
-	    setVisible(true);
-	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(render);
+		pack();
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	    render.createBufferStrategy(2);
-	    bufstrat = render.getBufferStrategy();
+		render.createBufferStrategy(2);
+		bufstrat = render.getBufferStrategy();
 	}
 
 	public void loop()
