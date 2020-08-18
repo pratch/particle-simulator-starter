@@ -34,7 +34,7 @@ public class Window extends JFrame{
 			public void mouseClicked(MouseEvent e) {
 
 				for(int i=0; i < numParticles; i++) {
-					Particle proton = new Particle("Proton", mouseX, mouseY);
+					Particle proton = new Particle("Proton", mouseX, mouseY, Color.RED);
 					particles.add(proton);
 				}
 				
